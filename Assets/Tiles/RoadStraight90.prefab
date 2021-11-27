@@ -71,9 +71,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7574692696834224731, guid: a275da6cd25d44c43a3571d9f3f62dc7, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8800856689150755698, guid: a275da6cd25d44c43a3571d9f3f62dc7, type: 3}
       propertyPath: m_Name
       value: RoadStraight90
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8800856689150755698, guid: a275da6cd25d44c43a3571d9f3f62dc7, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9095127534472005542, guid: a275da6cd25d44c43a3571d9f3f62dc7, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5829271969692932467, guid: a275da6cd25d44c43a3571d9f3f62dc7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a275da6cd25d44c43a3571d9f3f62dc7, type: 3}

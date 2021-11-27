@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5386678962465430328
 RectTransform:
   m_ObjectHideFlags: 0
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 1963510529928102895}
   - component: {fileID: 2215903343342911250}
   m_Layer: 0
-  m_Name: (0, 0)
+  m_Name: Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
