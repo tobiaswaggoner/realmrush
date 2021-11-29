@@ -41,7 +41,7 @@ public class TargetLocator : MonoBehaviour
         target = FindObjectsOfType<Enemy>()
             .Select( em => new {Enemy = em, Distance = Vector3.Distance(em.transform.position, transform.position)})
             .Where ( em => em.Distance<MaxDistance)
-            .OrderBy(em => em.Distance)
+            .OrderByDescending(em => em.Enemy.AbsolutePosition)
             .FirstOrDefault()?
             .Enemy?.transform;
     }

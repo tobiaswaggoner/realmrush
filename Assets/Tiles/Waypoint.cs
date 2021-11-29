@@ -13,7 +13,7 @@ public class Waypoint : MonoBehaviour
             return isPlacable;
         } 
     }
-    [SerializeField] GameObject TowerPrefab; 
+    [SerializeField] Tower Tower; 
     private void OnMouseEnter() 
     {
         if(!isPlacable) return;
@@ -30,9 +30,9 @@ public class Waypoint : MonoBehaviour
     {
         if(!isPlacable) return;
 
-        Instantiate(TowerPrefab, transform.position, Quaternion.identity);
+        var placed = Tower.CreateTower(transform.position);
         transform.position = new Vector3(transform.position.x, 0, transform.position.z);
-        isPlacable = false;
+        isPlacable = !placed;
         
     }
 

@@ -11,7 +11,14 @@ public class EnemyMover : MonoBehaviour
     [SerializeField]
     [Range(0.1f, 5.0f)]    private float Speed = 1.0f;
 
-    // Start is called before the first frame update
+    public float AbsolutePosition = 0.0f;
+
+    Enemy enemy;
+
+
+    private void Start() {
+        enemy = GetComponent<Enemy>();
+    }
     void OnEnable()
     {
         FindPath();
@@ -43,6 +50,7 @@ public class EnemyMover : MonoBehaviour
             while(travelPercent<1)
             {
                 travelPercent += Time.deltaTime * Speed;
+                AbsolutePosition = Path.IndexOf(waypoint) + travelPercent;
                 transform.position = Vector3.Lerp(startPosition, endPosition, travelPercent);
                 transform.LookAt(endPosition);
                 yield return new WaitForEndOfFrame();
@@ -50,6 +58,7 @@ public class EnemyMover : MonoBehaviour
         }
         gameObject.SetActive(false);
         ReturnToStart();
+        enemy.ReduceLives();
 
     }
 
