@@ -51,6 +51,10 @@ public class TargetLocator : MonoBehaviour
         EmissionModule.enabled = target!=null;
         if(target==null) return;
 
-        weapon.LookAt(target);
+//        weapon.LookAt(target);
+
+        var neededRotation = Quaternion.LookRotation(target.position - weapon.parent.position);    
+        weapon.rotation = Quaternion.RotateTowards(weapon.rotation, neededRotation, Time.deltaTime * 200f);
+
     }
 }

@@ -13,9 +13,9 @@ public class Tower : MonoBehaviour
     {
         var bank = FindObjectOfType<Bank>();    
         if(bank==null) return false;
-        if(bank.CurrentBalance<=Costs) return false;
+        if(bank.CurrentBalance<Costs) return false;
 
-        var tower = Instantiate(TowerPrefab);
+       var tower = Instantiate(TowerPrefab);
         tower.transform.position = position;
 
         bank.Withdraw(Costs);

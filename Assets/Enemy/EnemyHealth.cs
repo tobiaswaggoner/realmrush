@@ -5,9 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Enemy))]
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] int MaxHitPoints = 5;
+    [SerializeField] public int MaxHitPoints = 5;
     [Tooltip("Adds amount to max hitpoints every round")]
     [SerializeField] int DifficultyRamp = 1;
+    [SerializeField] GameObject Explosion;
     private int currentHitpoints;
 
     public int CurrentHitpoints => currentHitpoints;
@@ -18,7 +19,7 @@ public class EnemyHealth : MonoBehaviour
     }
 
     private void OnEnable() {
-        currentHitpoints = MaxHitPoints;
+        currentHitpoints = MaxHitPoints + Random.Range(-MaxHitPoints / 2 , MaxHitPoints / 2);
     }
 
     private void OnParticleCollision(GameObject other) 
@@ -27,6 +28,10 @@ public class EnemyHealth : MonoBehaviour
         if(currentHitpoints <=0)
         {
             gameObject.SetActive(false);
+
+            var explosionPosition = new Vector3(transform.position.x, 8, transform.position.z);
+            var explosion = Instantiate(Explosion, explosionPosition, Quaternion.identity);
+            Object.Destroy(explosion, 1.0f);
             GetComponent<EnemyMover>().ReturnToStart();
             enemy.RewardGold();
             MaxHitPoints += DifficultyRamp;

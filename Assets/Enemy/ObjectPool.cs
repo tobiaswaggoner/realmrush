@@ -8,7 +8,7 @@ public class ObjectPool : MonoBehaviour
 
     [SerializeField] private GameObject EnemyPrefab;
     [SerializeField] private int poolSize = 5;
-    [SerializeField] private int spawnTimer = 1;
+    [SerializeField] private float spawnTimer = 1.0f;
 
     private List<GameObject> pool;
 
@@ -35,6 +35,7 @@ public class ObjectPool : MonoBehaviour
             if(nextInPool != null)
             {
                 nextInPool.SetActive(true);
+                if(spawnTimer>0.5f) spawnTimer-=0.01f;
             }
             yield return new WaitForSeconds(spawnTimer);
         }

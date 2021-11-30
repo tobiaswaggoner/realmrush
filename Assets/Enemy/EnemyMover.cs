@@ -18,6 +18,7 @@ public class EnemyMover : MonoBehaviour
 
     private void Start() {
         enemy = GetComponent<Enemy>();
+        
     }
     void OnEnable()
     {
@@ -36,7 +37,11 @@ public class EnemyMover : MonoBehaviour
 
     public void ReturnToStart()
     {
+        var enemyHealth = GetComponentInParent<EnemyHealth>();
+        var scaleFactor = (enemyHealth? enemyHealth.MaxHitPoints - 5 : 5) * 0.01f;
         transform.position = Path[0].transform.position;
+        transform.localScale = new Vector3(1 +  scaleFactor , 1 + scaleFactor, 1 + scaleFactor * 10f);
+        Speed = Speed + 0.01f;
     }
 
     private IEnumerator FollowPath()
@@ -52,7 +57,8 @@ public class EnemyMover : MonoBehaviour
                 travelPercent += Time.deltaTime * Speed;
                 AbsolutePosition = Path.IndexOf(waypoint) + travelPercent;
                 transform.position = Vector3.Lerp(startPosition, endPosition, travelPercent);
-                transform.LookAt(endPosition);
+                var neededRotation = Quaternion.LookRotation(startPosition - endPosition);    
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, neededRotation, Time.deltaTime * 500f);
                 yield return new WaitForEndOfFrame();
             }
         }
