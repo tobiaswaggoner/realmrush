@@ -4,10 +4,10 @@ using UnityEngine;
 using TMPro;
 using System;
 
-[ExecuteAlways]
+// [ExecuteAlways]
 public class CoordinateLabeler : MonoBehaviour
 {
-    private TextMeshPro label;
+    /*private TextMeshPro label;
     [SerializeField] Color DefaultColor = Color.white;
     [SerializeField] Color BlockedColor  = Color.grey;
     private Vector2Int coordinates = new Vector2Int();
@@ -57,5 +57,5 @@ public class CoordinateLabeler : MonoBehaviour
     private void UpdateObjectName()
     {
         transform.parent.name = coordinates.ToString();
-    }
+    }*/
 }

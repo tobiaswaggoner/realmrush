@@ -41,7 +41,11 @@ QualitySettings:
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 0}
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - Standalone
+    - WebGL
+    - Windows Store Apps
+    - Android
   - serializedVersion: 2
     name: Low
     pixelLightCount: 0
@@ -79,6 +83,9 @@ QualitySettings:
     customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms:
     - Android
+    - Standalone
+    - WebGL
+    - Windows Store Apps
   - serializedVersion: 2
     name: Medium
     pixelLightCount: 1
@@ -116,6 +123,9 @@ QualitySettings:
     customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms:
     - Android
+    - Windows Store Apps
+    - WebGL
+    - Standalone
   - serializedVersion: 2
     name: High
     pixelLightCount: 2
@@ -153,6 +163,9 @@ QualitySettings:
     customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms:
     - Android
+    - WebGL
+    - Windows Store Apps
+    - Standalone
   - serializedVersion: 2
     name: Very High
     pixelLightCount: 3
@@ -190,6 +203,9 @@ QualitySettings:
     customRenderPipeline: {fileID: 0}
     excludedTargetPlatforms:
     - Android
+    - Windows Store Apps
+    - WebGL
+    - Standalone
   - serializedVersion: 2
     name: Ultra
     pixelLightCount: 4
@@ -225,7 +241,10 @@ QualitySettings:
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
     customRenderPipeline: {fileID: 0}
-    excludedTargetPlatforms: []
+    excludedTargetPlatforms:
+    - WebGL
+    - Windows Store Apps
+    - Android
   - serializedVersion: 2
     name: Oculus
     pixelLightCount: 1

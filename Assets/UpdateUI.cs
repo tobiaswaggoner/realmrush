@@ -6,10 +6,10 @@ using UnityEngine;
 public class UpdateUI : MonoBehaviour
 {
     [SerializeField]
-    TextMeshProUGUI GoldText;
+    TextMeshPro GoldText;
 
     [SerializeField]
-    TextMeshProUGUI LivesText;
+    TextMeshPro LivesText;
 
     [SerializeField]
     Bank bank;

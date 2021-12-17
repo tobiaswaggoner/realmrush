@@ -9,6 +9,16 @@ public class Tower : MonoBehaviour
     [SerializeField]
     int Costs = 50;
 
+    public bool CanBePurchased
+    {
+        get
+        {
+            var bank = FindObjectOfType<Bank>();    
+            if(bank==null) return false;
+            return bank.CurrentBalance>=Costs;
+        }
+    }
+
     public bool CreateTower(Vector3 position)
     {
         var bank = FindObjectOfType<Bank>();    

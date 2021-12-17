@@ -29,6 +29,7 @@ public class ObjectPool : MonoBehaviour
 
     private IEnumerator SpawnEnemies()
     {
+        yield return new WaitForSeconds(10);
         while(true)
         {
             var nextInPool = pool.FirstOrDefault(go => go.activeSelf == false);
